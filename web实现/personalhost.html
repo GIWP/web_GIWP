@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>医生主页</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/personalhost.css" rel="stylesheet">
+    <script src='js/jquery.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            $("#toggle-resume").toggle();
+        });
+    </script>
+</head>
+<body>
+<div class="symbol">
+    <img id="btn" src="images/avatar.jpg" onclick="fun()"/>
+</div>
+<div class="container" id="toggle-resume">
+    <div class="tab-pane" id="profile">
+        <h4>工作经验</h4>
+        <p class="sm">
+            <grey>Black Tie Corp.</grey> | June 2013 - Actual.<br/>
+            <grey>Other Corp.</grey> | January 2011 - May 2013.<br/>
+        </p>
+        <h4>教育经历</h4>
+        <p class="sm">
+            <grey>Web Designer</grey> | Greenville University.<br/>
+            <grey>Business Master</grey> | Loyal Univesrity.<br/>
+        </p>
+
+        <h4>获得奖项</h4>
+        <p class="sm">
+            <grey>Best Web Design</grey> | Black Tie Site.<br/>
+            <grey>Designer of the Year</grey> | 2012.<br/>
+        </p>
+    </div><!-- Tab Profile -->
+</div>
+<script>
+ function fun(){
+        $('#toggle-resume').toggle();
+ }
+</script>
+</body>
+</html>

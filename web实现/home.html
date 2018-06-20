@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>入口</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet"	href="css/bootstrap.min.css" 		type="text/css" media="all">
+    <link rel="stylesheet"	href="css/home.css" 				type="text/css" media="all">
+</head>
+<body>
+<div class="header ">
+    <div class="col-md-7 container">
+        <div class="header-slider">
+            <div class="slider-1">
+                <div class="slider">
+                    <ul class="rslides" id="slides1">
+                        <li><img src="images/slide-4.jpg" alt=""></li>
+                        <li><img src="images/slide-3.jpg" alt=""></li>
+                        <li><img src="images/slide-5.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slider-2">
+                <div class="slider">
+                    <ul class="rslides" id="slides2">
+                        <li><img src="images/slide-6.jpg" alt=""></li>
+                        <li><img src="images/slide-7.jpg" alt=""></li>
+                        <li><img src="images/slide-8.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5" id="center">
+        <div class="logo">
+            <h1 class="agileits"><a href="login.html">私人医生</a></h1>
+            <img src="images/logo-style.png" alt="">
+        </div>
+
+        <div class="header-info">
+            <p> 一些介绍的话</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    $(function () {
+        $("#slides1").responsiveSlides({
+            auto: true,
+            speed: 2000,
+            namespace: "callbacks",
+
+        });
+    });
+    $(function () {
+        $("#slides2").responsiveSlides({
+            auto: true,
+            speed: 2000,
+            namespace: "callbacks",
+        });
+    });
+</script>
+</body>
+</html>
