@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登陆界面</title>
+    <link rel="stylesheet" href="../static/css/login.css" media="screen" type="text/css" />
+    <script src='../static/js/jquery.min.js'></script>
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <script>
+        $(document).ready(function () {
+            $("#login").toggle();
+        });
+    </script>
+    <script>
+        function jump(){
+            window.location.href="../register";
+        }
+    </script>
+</head>
+
+<body>
+
+<span href="#" class="button" id="toggle-login">Login</span>
+
+<div id="login" align="center">
+    <div id="triangle"></div>
+    <h1>Login</h1>
+    <form action="{% url 'login' %}" method="post">
+        <input type="text" id="acc"  placeholder="账号" name="username"/>
+        <input type="password" id="psw" placeholder="密码" name="password"/>
+        <span class="identitySpan"><i class="fa fa-user" aria-hidden="true"></i></span>
+        <select name="identity"  id="theSelect">
+            <option value="doctor">doctor</option>
+            <option value="family">family</option>
+        </select>
+        <br>
+        <input type="submit" id="btn" value="登陆"/>
+        <button type="button" id="reg" onclick="jump()">注册</button>
+    </form>
+</div>
+
+<script>
+    $('#toggle-login').click(function(){
+        $('#login').toggle();
+    });
+</script>
+</body>
+
+</html>

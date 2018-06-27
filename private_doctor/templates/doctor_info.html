@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doctor information</title>
+    <script type="text/javascript">
+      function editConfig() {
+          var form = document.getElementById('form');
+          var div = document.getElementById('div');
+          form.hidden = !form.hidden;
+          div.hidden = !div.hidden;
+      }
+    </script>
+
+</head>
+<body>
+    <h1>doctor information</h1>
+    <div id="div" >
+    <button onclick="editConfig()">edit</button>
+        {{ desc }}
+    </div>
+    <form action="{% url 'doctor_info' %}" id="form" method="POST" hidden>
+        <textarea name="desc" id="text" cols="30" rows="10">
+          {{ desc }}
+        </textarea>
+        <input type="submit" value="submit">
+    </form>
+    <a href="{% url 'doctor' %}">返回</a>
+</body>
+</html>

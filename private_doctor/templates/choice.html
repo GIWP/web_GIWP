@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>选改医生</h1>
+    {% for doctor in doctors %}
+        <form action="{% url 'choice' %}" method="POST">
+            <div>
+                {{ doctor.user }}
+            </div>
+            <div name="text">
+                {{doctor.text }}
+            </div>
+            <input name="user" hidden value={{doctor.user}} >
+            <input type="submit" value="submit">
+        </form>
+    {% endfor %}
+</body>
+</html>

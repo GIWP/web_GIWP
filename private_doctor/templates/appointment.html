@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>appointment</title>
+    <script type="text/javascript" src=""></script>
+</head>
+<body>
+    <h1>预约医生</h1>
+    <form action="{% url 'appointment' %}" method="POST" >
+        <input type="date" name="date" id="date_input">
+        <input type="submit">
+    </form>
+    {% if appointments %}
+        <table border="1">
+            <thread>
+                <th>预约时间</th>
+                <th>预约状态</th>
+            </thread>
+            <tbody>
+                {% for appointment in appointments %}
+                    <tr>
+                        <td>{{ appointment.time }}</td>
+                        <td>{{ appointment.response }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <script type="text/javascript">
+        var now = new Date();
+        var month = now.getMonth() + 1;
+        month = month.toString().length == 1? '0' + month.toString(): month.toString();
+        var date = now.getDate().toString().length == 1? '0' + now.getDate().toString(): now.getDate().toString();
+        console.log(now.getFullYear().toString() + '-' + month + '-' + date);
+        document.getElementById('date_input').min = now.getFullYear().toString() + '-' + month + '-' + date;
+    </script>
+    <a href="/family">返回</a>
+</body>
+</html>
