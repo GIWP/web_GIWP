@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>family information</title>
+    <script type="text/javascript">
+      function editConfig() {
+          var form = document.getElementById('form');
+          var div = document.getElementById('div');
+          form.hidden = !form.hidden;
+          div.hidden = !div.hidden;
+      }
+    </script>
+</head>
+<body>
+    <link href="../static/css/history.css" rel="stylesheet" type="text/css" />
+    <h1 align="center"style="color: cornflowerblue;"style="font-size:80px ;">family information</h1>
+    
+    <div id="div" >
+    <button type="button" id="edit" onclick="editConfig()">edit</button>
+        {{ desc }}
+    </div>
+    <form action="{% url 'history' %}" id="form" method="POST" hidden>
+        <textarea name="desc" id="text" cols="30" rows="10">
+          {{ desc }}
+        </textarea>
+        <input type="submit" value="submit">
+    </form>
+    <a href="{% url 'search' %}" type="text/css" id="back">返回</a>
+</body>
+</html>
