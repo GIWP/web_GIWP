@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>病人主页</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/patient.css" rel="stylesheet">
+    <script src='../static/js/jquery.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            $("#toggle-resume").toggle();
+        });
+    </script>
+</head>
+<body>
+<div class="symbol">
+    <img id="btn" src="../static/images/avatar.jpg" onclick="fun()"/>
+</div>
+<div class="container" id="toggle-resume" align="center">
+    <div class="tab-pane" id="profile">
+        <h4 id="history">病例</h4>
+        <p class="sm">
+            暂无
+        </p>
+        <h4>现状</h4>
+        <p class="sm">
+            暂无
+        </p>
+
+        <h4>预约医生</h4>
+        <p class="sm">
+            暂无
+        </p>
+    </div><!-- Tab Profile -->
+</div>
+<script>
+    function fun(){
+        $('#toggle-resume').toggle();
+    }
+</script>
+</body>
+</html>

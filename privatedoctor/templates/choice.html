@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改选医生</title>
+    <link rel="stylesheet" href="../static/css/choice.css" type="text/css" media="all">
+    <script src='../static/js/jquery.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            $("#content").toggle();
+        });
+    </script>
+</head>
+<body>
+    <div align="center">
+        <button href="#" class="button" id="toggle-register">改选医生</button>
+    </div>
+    <div id="content" align="center">
+    {% for doctor in doctors %}
+        <form action="{% url 'choice' %}" method="POST">
+            <div id="inf">
+                <div class="one">
+                    {{ doctor.user }}
+                </div>
+                <div name="text" class="one">
+                    {{doctor.text }}
+                </div>
+            </div>
+            <input name="user" hidden value={{doctor.user}} >
+            <input type="submit" class="button1" value="submit">
+        </form>
+    {% endfor %}
+    </div>
+    <script>
+        $('#toggle-register').click(function(){
+            $('#content').toggle();
+        });
+    </script>
+</body>
+</html>

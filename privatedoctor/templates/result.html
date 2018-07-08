@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索结果</title>
+
+    <link rel="stylesheet" href="../static/css/result.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+
+    <script src='../static/js/jquery.min.js'></script>
+    <script type="text/javascript">
+        function add(name) {
+            var container =document.getElementById('container');
+            var node=container.nextSibling;
+            var oDiv = document.createElement('div');
+            oDiv.innerHTML = "<div class='doctors'>" +
+                "<form class='doctor' align='center'action='{% url 'searchlist' %}' method='post'>" +
+                "<input type='text' id='doctorName' name='doctor_select' value='"+name+"'>" +
+                "<input type='submit' value='前往主页' id='select'/>" +
+                "</form>" +
+                "</div>";
+            container.parentNode.insertBefore(oDiv, node);
+            node=oDiv.nextSibling;
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#outer").toggle();
+        var namelist={{ doctorlist|safe }};
+        for (var i = 0; i < namelist.length; i++) {
+            add(namelist[i]);
+        }
+        {#alert(namelist)#}
+        });
+    </script>
+</head>
+<body>
+    {{ doctor_list }}
+    <span href="#" class="button" id="toggle-register">搜索结果</span>
+    <div id="outer">
+        <div id="container" align="center">
+        </div>
+    </div>
+    <script>
+        $('#toggle-register').click(function(){
+            $('#outer').toggle();
+        });
+    </script>
+</body>
+</html>
