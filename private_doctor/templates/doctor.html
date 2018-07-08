@@ -1,17 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>doctor</title>
-  <script type="text/javascript">
-    function changeValue(e) {
-      e.parentElement.act.value = 'discline';
-    }
-  </script>
+    <meta charset="utf-8">
+    <title医生主页</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/doctor.css" rel="stylesheet">
+    <script src='../static/js/jquery.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            $("#toggle-resume").toggle();
+        });
+    </script>
 </head>
+
 <body>
-  <h1>doctor</h1>
-  {% for family in families %}
+  <div class="symbol">
+      <img id="btn" src="../static/images/doctor-header.jpg" onclick="fun()"/>
+  </div>
+
+
+  <div class="container" id="toggle-resume" align="center">
+    <div class="tab-pane" id="profile">
+        <div>
+            {% for family in families %}
     <div>
       <h2>{{ family.user }}</h2>
       <div>
@@ -19,9 +31,9 @@
           <li>{{ time }}</li>
         {% endfor %}
       </div>
-    </div>
+    </div><br><br>
   {% endfor %}
-  <a href="{% url 'doctor_info' %}">个人信息</a>
+  <br><a href="{% url 'doctor_info' %}">修改个人信息</a><br><br>
   {% for msg in messages %}
     <div style="border: solid">
       {{ msg.family.user }} ask for {{ msg.time }}
@@ -35,7 +47,16 @@
       </form>
     </div>
   {% endfor %}
-  <a href="{% url 'manage' %}">家庭管理</a>
-  <a href="{% url 'login' %}">退出登录</a>
+  <a href="{% url 'manage' %}">家庭管理</a><br><br>
+  <a href="{% url 'login' %}">退出登录</a><br><br>
+  </div>
+    </div><!-- Tab Profile -->
+  </div>
+
+  <script>
+      function fun(){
+          $('#toggle-resume').toggle();
+      }
+  </script>
 </body>
 </html>

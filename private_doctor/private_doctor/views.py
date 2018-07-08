@@ -60,16 +60,6 @@ def register(request):
     else:
         return render(request, 'register.html')
 
-# def user(request):
-#     if request.method=="POST":
-#         username=request.POST.get("username", None)
-#         password=request.POST.get("password", None)
-#         sex=request.POST.get("sex", None)
-#         email=request.POST.get("email", None)
-#         models.UserInfo.objects.create(user=username,pwd=password,sex=sex,email=email)
-#     userlist=models.UserInfo.objects.all()
-#     return render(request, "user.html",{"data":userlist})
-
 
 def doctor(request):
     if models.Doctor.objects.filter(user=request.session['user'],
@@ -103,7 +93,6 @@ def doctor(request):
 
 
 def get_family(user, families):
-    print(families)
     for family in families:
         if family['user'] == user:
             return family
@@ -135,11 +124,16 @@ def doctor_info(request):
                                     pwd=request.session['pwd']):
         doctor = models.Doctor.objects.filter(user=request.session['user'])[0]
         if request.method == "POST":
-            text = request.POST.get("desc", None)
-            doctor.text=text
-            doctor.save()
-        desc = doctor.text
-        return render(request, "doctor_info.html", {"desc": desc})
+            password = request.POST.get("password", None)
+            email = request.POST.get("email", None)
+            major = request.POST.get("major", None)
+            expert = request.POST.get("expert", None)
+            models.Doctor.objects.filter(user=request.session['user'], pwd=request.session['pwd'])
+            doctor = models.Doctor.objects.filter(user=request.session['user'])[0]
+            models.Doctor.objects.filter(user=doctor.user).update(pwd=password, email=email, major=major, text=expert)
+            return HttpResponseRedirect('/login')
+
+        return render(request, "doctor_info.html")
     else:
         return HttpResponseRedirect('/login')
 
@@ -153,25 +147,18 @@ def manage(request):
             for fd in fds:
                 family = models.Family.objects.filter(user = fd.family.user)[0]
                 if request.method == "POST":
-                    text = request.POST.get("desc", None)
-                    family.advice=text
-                    family.save()
-                return render(request, "manage.html", {"fds": fds,"advice":family.advice})
+                    text = request.POST.get(fd.family.user, None)
+                    if text is not None:
+                        family.advice=text
+                        family.save()
+            fds=models.Family_Doctor.objects.filter(doctor_name=doctor.user).all()
+            return render(request, "manage.html", {"fds": fds})
         else:
             return render(request,"no_family.html")
+
     else:
         return HttpResponseRedirect('/login')
 
-
-def test(request):
-    print(request.POST)
-    data = {
-        'messages': [{
-            'time': 'asdas',
-            'family': 'asdhjkqwhjek'
-        }]
-    }
-    return render(request, "doctor.html", data)
 
 def choice(request):
     if models.Family.objects.filter(user=request.session['user'],
@@ -189,7 +176,7 @@ def choice(request):
                     fd[0].save()
                     family.advice="暂无"
                     family.save()
-            return HttpResponseRedirect('/family/')
+            return HttpResponseRedirect('/thehomepage/')
         return render(request,"choice.html",{"doctors":doctors})
     else:
         return HttpResponseRedirect('/login/')
@@ -234,36 +221,46 @@ def history(request):
         return render(request, "history.html", {"desc": desc})
     else:
         return HttpResponseRedirect('/login')
-#
-# def thehomepage(request):
-#     hotmajors= models.Doctor.objects.all()
-#     return render(request,"thehomepage.html",{"hotmajors":hotmajors})
-#
-# def search_action(request):
-#     text
+
 
 def search(request):
-    if request.method == 'POST':
-        major=request.POST.get("major", None)
-        print("dedao"+major)
-        request.session['major'] = major
-        return HttpResponseRedirect('/result')
-    else:
-        # models.Doctor.objects.create(user="华佗", pwd="huatuo",
-        #                              sex="female", email="huatuo@163.com",major="中医")
-        # models.Doctor.objects.create(user="华佗1", pwd="huatuo",
-        #                              sex="female", email="huatuo@163.com",major="中医")
-        # models.Doctor.objects.create(user="华佗2", pwd="huatuo",
-        #                              sex="female", email="huatuo@163.com",major="中医")
-        hotmajors = models.Doctor.objects.values_list("major").annotate(hot_major_n=Count("major")).order_by("hot_major_n")
-        hotmajors=list(hotmajors)
-        print(hotmajors[0][0])
-        temp=[]
-        for k in hotmajors:
-            temp.append(k[0])
-        hotmajors=temp
+    if models.Family.objects.filter(user=request.session['user'],
+                                   pwd=request.session['pwd']):
+        # doctor_name=models.Family_Doctor.objects.filter(family__user=request.session['user'])[0].doctor_name
+        family = models.Family.objects.filter(user=request.session['user'])
+        df = models.Family_Doctor.objects.filter(family__user=request.session['user'])
+        doctor_name = "暂无预约医生"
 
-        return render(request, "thehomepage.html",{"hotmajors":hotmajors})
+        if request.method == 'POST':
+            major = request.POST.get("major", None)
+            print("dedao" + major)
+            request.session['major'] = major
+            return HttpResponseRedirect('/result')
+        else:
+
+            if len(df) == 0:
+                advice = "暂无医嘱"
+            else:
+                df = models.Family_Doctor.objects.filter(family__user=request.session['user'])[0]
+                advice = family[0].advice
+                doctor_name =  df.doctor_name
+
+            hotmajors = models.Doctor.objects.values_list("major").annotate(hot_major_n=Count("major")).order_by(
+                "hot_major_n")
+            hotmajors = list(hotmajors)
+            print(hotmajors[0][0])
+            temp = []
+            for k in hotmajors:
+                temp.append(k[0])
+            hotmajors = temp
+
+            return render(request, "thehomepage.html", {"hotmajors": hotmajors,"doctor":doctor_name,"advice":advice})
+    else:
+       return HttpResponseRedirect('/login')
+
+
+
+
 
 def searchlist(request):
     if request.method =="POST":

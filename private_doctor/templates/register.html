@@ -13,7 +13,7 @@
     </script>
     <script>
         function jump(){
-            window.location.href="home";
+            window.location.href="{% url 'login' %}";
         }
     </script>
 </head>
@@ -25,7 +25,7 @@
 <div id="register" align="center">
     <div id="triangle"></div>
     <h1>register</h1>
-    <form action="{% url 'register' %}" method="post">
+    <form action={% url 'register' %} method="post">
         <span class="sexSpan"><i class="fa fa-intersex" aria-hidden="true"></i></span>
         <select name="sex" class="sex">
             <option value="male">Male</option>
@@ -38,9 +38,9 @@
         </select>
         <br>
         <input type="text" id="acc"  placeholder="账号" name="username"/>
-        <input type="password" id="psw" placeholder="密码"  name="password" />
-        <input type="text" id="email"  placeholder="邮箱"  name="email"/>
-        <input type="submit" id="reg" value="注册"  >
+        <input type="password" id="psw" placeholder="密码" name="password"/>
+        <input type="text" id="email"  placeholder="邮箱" name="email" />
+        <input type="submit" id="reg" value="注册">
         <button type="button" id="home" onclick="jump()">首页</button>
     </form>
 </div>

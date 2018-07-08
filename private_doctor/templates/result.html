@@ -22,23 +22,16 @@
             container.parentNode.insertBefore(oDiv, node);
             node=oDiv.nextSibling;
         }
-
     </script>
     <script>
         $(document).ready(function () {
             $("#outer").toggle();
         var namelist={{ doctorlist|safe }};
-
         for (var i = 0; i < namelist.length; i++) {
             add(namelist[i]);
         }
         {#alert(namelist)#}
-
-
-
-
         });
-
     </script>
 </head>
 <body>

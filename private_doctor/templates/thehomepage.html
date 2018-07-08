@@ -60,17 +60,17 @@
     <div id="triangle"></div>
     <div id="content">
         <label class="label" id="theDoctor">我的私人医生</label>
-        <div class="show1">暂未预约医生</div>
+        <div class="show1">{{ doctor }}</div>
         <label class="label" id="theAdvice">我的医嘱</label>
-        <div class="show2">暂无医嘱</div>
+        <div class="show2">{{ advice }}</div>
     </div>
 </div>
 <div id="links" align="center">
 
-        <button class="link"><a href="choice" class="a">择医</a></button>
-        <button class="link"><a href="appointment" class="a">预约</a></button>
-        <button class="link"><a href="history" class="a">编辑</a></button>
-        <button class="link"><a href="home" class="a">退出</a></button>
+        <button class="link"><a href="{% url 'choice' %}" class="a">择医</a></button>
+        <button class="link"><a href="{% url 'appointment' %}" class="a">预约</a></button>
+        <button class="link"><a href="{% url 'history' %}" class="a">编辑</a></button>
+        <button class="link"><a href="{% url 'login' %}" class="a">退出</a></button>
 
 </div>
 <script>

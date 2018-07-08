@@ -124,6 +124,3 @@ STATICFILES_DIRS=(
     os.path.join(BASE_DIR,'static'),
     #This is where js files store.
 )
-
-if __name__ == "__main__":
-    print  os.path.join(BASE_DIR, 'db.sqlite3')

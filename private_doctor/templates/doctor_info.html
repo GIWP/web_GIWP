@@ -1,30 +1,51 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>doctor information</title>
-    <script type="text/javascript">
-      function editConfig() {
-          var form = document.getElementById('form');
-          var div = document.getElementById('div');
-          form.hidden = !form.hidden;
-          div.hidden = !div.hidden;
-      }
-    </script>
-
+    <title>医生信息修改</title>
 </head>
-<body>
-    <h1>doctor information</h1>
-    <div id="div" >
-    <button onclick="editConfig()">edit</button>
-        {{ desc }}
-    </div>
-    <form action="{% url 'doctor_info' %}" id="form" method="POST" hidden>
-        <textarea name="desc" id="text" cols="30" rows="10">
-          {{ desc }}
-        </textarea>
-        <input type="submit" value="submit">
-    </form>
-    <a href="{% url 'doctor' %}">返回</a>
+<body background="../static/images/doctor-bg.jpg" style=" background-repeat:no-repeat ;background-size:100%">
+    <form action="{% url 'doctor_info' %}" method="post">{% csrf_token %}
+        <br>
+        <br>
+        <br>
+        <div align="center">
+            <h1>医生信息修改</h1>
+            <font size="5" face="黑体">修改密码：</font>
+            <input type="password" name="password" size="24" style="background-color: beige" required="true" id="pwd" onblur="detectLength()" placeholder="new password"/><br>
+            <p></p>
+            <font size="5" face="黑体">修改邮箱：</font>
+            <input type="email" name="email" size="24" style="background-color: beige" required="true" placeholder="new email address"/>
+            <p></p>
+            <font size="5" face="黑体">修改专长：</font>
+            <input type="major" name="major" size="24" style="background-color: beige" required="true" placeholder="new major"/>
+            <p></p>
+
+            <font size="5" face="黑体">修改个人信息描述：</font>
+            <p></p>
+            <textarea name="expert" rows="5" cols="50" style="background-color: beige"></textarea>
+            <br>
+            <br>
+            <br>
+            <input type="image" src="../static/images/bt2.png" style="height:50px" id="submit">
+        </div>
+        <br>
+</form>
+    <script type="text/javascript">
+        function detectLength() {
+            var pwd = document.getElementById('pwd').value;
+            console.log(pwd);
+            if(pwd.length < 6) {
+              document.getElementById('submit').disabled = true;
+              document.getElementById('msg').textContent = "need more " +
+                "characters";
+            } else {
+              document.getElementById('submit').disabled = false;
+              document.getElementById('msg').textContent = "";
+            }
+            event.preventDefault();
+            return false;
+        }
+    </script>
 </body>
 </html>

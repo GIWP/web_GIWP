@@ -8,7 +8,7 @@ class Doctor(models.Model):
     pwd = models.CharField(max_length=32)
     sex = models.CharField(max_length=32)
     email = models.CharField(max_length=32)
-    major = models.CharField(max_length=32,null=True)
+    major = models.CharField(max_length=32, null=True)
     text = models.TextField()
 
 class Family(models.Model):

@@ -8,7 +8,7 @@ a{
     text-decoration: none;
     color: whitesmoke;
 }
-button{
+.btn{
   border-radius: 5px;
   border: 2px solid #7BA7AB;
   width:100px;

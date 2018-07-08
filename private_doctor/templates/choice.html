@@ -2,21 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>改选医生</title>
+    <link rel="stylesheet" href="../static/css/choice.css" type="text/css" media="all">
+    <script src='../static/js/jquery.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            $("#content").toggle();
+        });
+    </script>
 </head>
 <body>
-    <h1>选改医生</h1>
+    <div align="center">
+        <button href="#" class="button" id="toggle-register">改选医生</button>
+    </div>
+    <div id="content" align="center">
     {% for doctor in doctors %}
         <form action="{% url 'choice' %}" method="POST">
-            <div>
-                {{ doctor.user }}
-            </div>
-            <div name="text">
-                {{doctor.text }}
+            <div id="inf">
+                <div class="one">
+                    {{ doctor.user }}
+                </div>
+                <div name="text" class="one">
+                    {{doctor.text }}
+                </div>
             </div>
             <input name="user" hidden value={{doctor.user}} >
-            <input type="submit" value="submit">
+            <input type="submit" class="button1" value="submit">
         </form>
     {% endfor %}
+    </div>
+    <script>
+        $('#toggle-register').click(function(){
+            $('#content').toggle();
+        });
+    </script>
 </body>
 </html>
