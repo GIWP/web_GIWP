@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户输出</title>
+</head>
+<body>
+    <table border="1">
+        <thread>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>性别</th>
+            <th>常用邮箱</th>
+        </thread>
+        <tbody>
+            {% for line in data %}
+                <tr>
+                    <td>{{ line.user }}</td>
+                    <td>{{ line.pwd }}</td>
+                    <td>{{ line.sex }}</td>
+                    <td>{{ line.email }}</td>
+                    <td>{{ line.identity }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理家庭</title>
+	<link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../static/css/manage.css" type="text/css" media="all">
+    <script src='../static/js/jquery.min.js'></script>
+    <script type="text/javascript">
+        function editConfig() {
+            var form = document.getElementById('form');
+            var div = document.getElementById('div');
+            form.hidden = !form.hidden;
+            div.hidden = !div.hidden;
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#inf").toggle();
+        });
+    </script>
+    <script>
+        function jump(){
+            window.location.href="home.html";
+        }
+    </script>
+</head>
+<body>
+  <div align="center">
+    <button href="#" class="button" id="toggle-register">家庭信息</button>
+  </div>
+  <div align="center">
+      {% for fd in fds %}
+      <div id="{{ fd.family.user }}">
+              <div class="information" id="inf">
+                  <br>
+                  <label>家庭名称</label>
+                  <h4 class="h">{{ fd.family.user }}</h4>
+                  <label>家庭健康状况</label>
+                  <h4 class="h">{{ fd.family.text }}</h4>
+                  <label>医嘱</label>
+                  <h4 id="div">{{ advice }}</h4>
+              </div>
+            <div class="btn">
+                <button  id="edit" onclick="editConfig()">edit</button>
+                <button class="return" ><a href="{% url 'doctor' %}">返回</a></button>
+            </div>
+            <form action="{% url 'manage' %}" id="form" method="POST" hidden>
+                <textarea name="desc" id="text" cols="30" rows="10">
+                    {{ advice }}
+                </textarea>
+                <input type="submit" value="submit">
+            </form>
+          </div>
+      {% endfor %}
+  </div>
+  <script>
+      $('#toggle-register').click(function(){
+          $('#inf').toggle();
+      });
+  </script>
+</body>
+</html>
