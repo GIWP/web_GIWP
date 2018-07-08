@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b1ca576-3f76-4990-8638-bb77db1ceb8b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/web_GIWP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/manage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/private_doctor/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/private_doctor/admin.py" afterDir="false" />
@@ -20,7 +16,6 @@
       <change beforePath="$PROJECT_DIR$/Private_Doctor/privatedoctor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/privatedoctor/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/privatedoctor/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/privatedoctor/wsgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Private_Doctor/static/css/doctor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/static/css/doctor.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/static/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/static/css/font-awesome.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/static/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/static/css/homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/static/css/manage.css" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/static/css/manage.css" afterDir="false" />
@@ -32,42 +27,7 @@
       <change beforePath="$PROJECT_DIR$/Private_Doctor/templates/doctor_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/templates/doctor_view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/templates/manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/templates/manage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Private_Doctor/templates/thehomepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Private_Doctor/templates/thehomepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/.idea/privatedoctor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/.idea/privatedoctor.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/private_doctor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/private_doctor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/private_doctor/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/animate-custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/history.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/homepage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/manage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/patient.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/personalhost.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/register.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/static/css/css/result.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/templates/appointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/choice.html" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/templates/choice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/doctor_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/templates/doctor_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/family.html" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/templates/family.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/templates/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/new_file.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_doctor/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/private_doctor/templates/result.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -107,8 +67,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="103" column="12" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="12" />
+            <state relative-caret-position="-1120">
+              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -165,9 +125,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="472" />
-    <option name="y" value="66" />
-    <option name="width" value="783" />
+    <option name="x" value="471" />
+    <option name="y" value="65" />
+    <option name="width" value="784" />
     <option name="height" value="840" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -223,7 +183,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -313,8 +272,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="103" column="12" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="12" />
+        <state relative-caret-position="-1120">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
         </state>
       </provider>
     </entry>
