@@ -1,0 +1,6 @@
+一、项目开发和运行环境说明
+    使用pycharm开发，运行需要python2.7并安装导入django1.11，使用pycharm导入项目文件即可。
+二、测试运行结果
+    测试运行结果在文件——task8系统文件测试中详细描述。
+三、操作使用说明
+    使用pycharm导入项目文件后，尝试运行manage.py，程序识别出dj项目后运行privatedoctor即可。
